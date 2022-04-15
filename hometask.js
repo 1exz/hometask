@@ -1,48 +1,33 @@
-/*
- Задача из 5 шагов-строк:
+/*1) Напишите скрипт, который с помощью функции создает столько блоков 250 х 250 пикселей, 
+сколько введено в prompt и раскрашивает каждый блок рандомным цветом, размещает в центр каждого 
+блока картинку размером 100 х 100 пикс.			
  */
-let styles=["Джаз","Блюз"]
-console.log(styles)
-styles.push("РокэндРол")
-console.log(styles)
-console.log(styles.length)
-styles[styles.length-2]="Классика"
-console.log(styles)
-let elem=styles.shift()
-console.log(styles)
-console.log(`этот элемент ${elem}`)
-styles.unshift("Рэп","Рэгги")
-console.log(styles)
- /*
- 2) Написать функцию, которая возвращает последний элемент массивва 
- */  
-function returnLastElem(arr){
-    return arr[arr.length-1]
-}
-console.log(returnLastElem([1,2,3,4,35]))
-/*
- 3) Вычислить (суммы элементов массива):
- */
-const x =[0.3,5.2, 9.4, 8]; 
-const y  =[43,5,3.4,8, 20];
-function summElem(x,y){
-    return (x.reduce((a,b)=>a+b,0)+y.reduce((a,b)=>a+b,0))/2
+
+function color(){
+    let color="#",c
+    let color1 =["1","2","3","4","5","6","7","8","9","a","b","c","d","e","f"]
+    for (j=1; j<=6; j++) { 
+    c = Math.floor(Math.random() * color1.length);
+        color+= color1[c];  
+      
+       }
+       return color
     }
-console.log(summElem(x,y))
-
-
-/*
-4) Вычислить 
-C=(M!+N!)/(M+1)!
-M и N – числа введенные с клавиатуры.
-M! – это факториал числа, например, 5! = 1*2*3*4*5, это равно 120.
-Факториал должен вычисляться с помощью функции.
-
- */
-let m=+prompt("введите число M")
-let n=+prompt("введите число N")
-function factorial(x) {
-    return (x != 1) ? x * factorial(x - 1) : 1;
-  }
-  c=((factorial(m)+factorial(n))/factorial(m+1))
-  console.log(c)
+    color()
+    function creat(){
+    let answer=+prompt("введите кол-во div")
+    let s=""
+    for (i=0;i<answer;i++){
+     s +=`<div style="background-color:${color()}" id="id3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/YellowE9C91E_circle_100%25.svg/200px-YellowE9C91E_circle_100%25.svg.png"></div>`
+    }
+    
+    
+    console.log(s)
+    id2.innerHTML=s
+    
+    }
+    
+    creat()
+    
+    
+    
