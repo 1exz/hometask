@@ -37,8 +37,8 @@ for (i = 0; i < 1; i++) {
 
    s += `Эти картинки закружаются с<br> помощью объекта данных 
     <div><img src="images/${cards[i].name}.jpg" style="${cards[i].style}" onclick="showInfo1()" > </div> 
-    <div><img src="images/${cards[i].name}.jpg" style="${cards[i].style}" onclick="showInfo2()"></div>
-    <div><img src="images/${cards[i].name}.jpg" style="${cards[i].style}" onclick="showInfo3()"></div>`
+    <div><img src="images/${cards[i+1].name}.jpg" style="${cards[i].style}" onclick="showInfo2()"></div>
+    <div><img src="images/${cards[i+2].name}.jpg" style="${cards[i].style}" onclick="showInfo3()"></div>`
 
 }
 id4.innerHTML = s
