@@ -1,17 +1,44 @@
-let arrMenu ="Главная, О компании, Продукция, Новости";
-  let arr = arrMenu.split(", ");
-  console.log(arr)
+function cardsRendering() {
+   id1.innerHTML = 'Эти картинки загружаются с <br>помощью  события<br> Window.onload ' + '</div><div><img src="images/mir.jpg" style="width: 300px;;height: 200px;" onclick="showInfo1()" ></div> <div><img src="images/red.jpg"style="width: 300px;;height: 200px;" onclick="showInfo2()"></div><div><img src="images/troi.jpg" style="width: 300px;;height: 200px ;" onclick="showInfo3()"></div>'
 
+}
 
-  function createMenu(){
-      const str = '<input type="button" value="Пункты меню" onclick="openIMG() ">: </p> <input type="text" name="menu" value="" size="50" id="m">';
-     id1.innerHTML = str
-     for (index of arr){
-     m.value += ` ${index}`
+function showInfo1() {
+   id2.innerHTML = '<img src="images/mir.jpg" onClick="hideInfo()" style="width: 600px;;height:400px;">' + ' Ми́рский за́мок (белор. Мірскі замак), за́мково-па́рковый ко́мплекс «Мир» (белор. замкава-палацавы комплекс «Мір») — оборонительное укрепление и резиденция в городском посёлке (пгт) Мир Кореличского района Гродненской области Белоруссии. Памятник архитектуры, внесён в список Всемирного наследия ЮНЕСКО (с 2000 года). Архитектурный комплекс включает в себя замок XVI—XX веков, валы XVII—XVIII веков, пруд 1896—1898 годов, часовню-усыпальницу Святополк-Мирских с домом сторожа и воротами, пейзажный и регулярный парки, дом управляющего. Находится в пгт Мир, на правом берегу реки Миранки[1].'
+}
+
+function showInfo2() {
+   id2.innerHTML = '<img src="images/red.jpg" onClick="hideInfo()" style="width: 600px;;height:400px;"> ' + ' Костёл святого Симеона и святой Елены (белор. Касцёл святога Сымона і святой Алены, польск. Kościół św. Szymona i Heleny), часто называемый также Красным костёлом — наиболее известный католический храм Минска.Административно относится к юго-восточному деканату Минско-Могилёвской архиепархии. Памятник архитектуры, включён в Государственный список историко-культурных ценностей Республики Беларусь (код 713Г000229)[1]. В ряде источников, включая воспоминания самого фундатора храма Эдварда Войниловича, стиль храма характеризуется как неороманский[2], в ряде других, как неоготика с чертами модерна[1][3].'
+}
+
+function showInfo3() {
+   id2.innerHTML = '<div><img src="images/troi.jpg" onClick="hideInfo()" style="width: 600px;;height:400px;"></div>' + '<div><p>Тро́ицкое предме́стье (Троицкая гора) — исторический район города Минска, расположенный в северо-восточной части исторического центра на левом берегу реки Свислочь. Некогда являлся торгово-административным центром столицы Республики Беларусь[1][2].На западе от Троицкой горы находится Минское Замчище, на северо-западе — Татарские огороды (белор.) и Старостинская слобода (белор.), на севере — Сторожёвка (белор.), на востоке — Золотая горка (белор.), на юге — центральные районы Высокий и Низкий (белор.) рынки[3][4].На территории предместья был расположен первый католический храм Минска. Здесь также находились не сохранившиеся до наших дней Свято-Вознесенский монастырь с одноименной церковью, Свято-Борисоглебская церковь, женский базилианский монастырь Святой Троицы (сохранился частично) и костёл и монастырь католического монашеского ордена мариавиток. Ныне предместье является одним из самых любимых мест отдыха минчан и гостей столицы[5].</p></div>'
+}
+
+function hideInfo() {
+   id2.innerHTML = ''
+}
+let cards = [{
+      name: "mir",
+      style: "width: 300px;;height:200px;",
+   },
+   {
+      name: "red",
+      style: "width: 300px;;height:200px;",
+   },
+   {
+      name: "troi",
+      style: "width: 300px;;height:200px;",
    }
-   const str1='<p>Цвет текста:<input type="color"value="#050505"></p> <p>Цвет фона  <input type="color" value="#0d9be3"></p><p>Цвет Hover <input type="color" value="#d1a815"></p>'
-   id2.innerHTML = str1
-  }
-    function openIMG(){
-        id3.innerHTML="<img src='https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg'>"
-    }
+]
+let s = "";
+
+for (i = 0; i < 1; i++) {
+
+   s += `Эти картинки закружаются с<br> помощью объекта данных 
+    <div><img src="images/${cards[i].name}.jpg" style="${cards[i].style}" onclick="showInfo1()" > </div> 
+    <div><img src="images/${cards[i].name}.jpg" style="${cards[i].style}" onclick="showInfo2()"></div>
+    <div><img src="images/${cards[i].name}.jpg" style="${cards[i].style}" onclick="showInfo3()"></div>`
+
+}
+id4.innerHTML = s
