@@ -33,12 +33,11 @@ let cards = [{
 ]
 let s = "";
 
-for (i = 0; i < 1; i++) {
+for (i = 0; i < 3; i++) {
 
-   s += `Эти картинки закружаются с<br> помощью объекта данных 
-    <div><img src="images/${cards[i].name}.jpg" style="${cards[i].style}" onclick="showInfo1()" > </div> 
-    <div><img src="images/${cards[i+1].name}.jpg" style="${cards[i].style}" onclick="showInfo2()"></div>
-    <div><img src="images/${cards[i+2].name}.jpg" style="${cards[i].style}" onclick="showInfo3()"></div>`
-
+   s += 
+    `<div><img src="images/${cards[i].name}.jpg" style="${cards[i].style}" onclick="showInfo${i+1}()" > </div> 
+    `
+    console.log(s)
 }
-id4.innerHTML = s
+id4.innerHTML = 'Эти картинки закружаются с<br> помощью объекта данных '+ s
